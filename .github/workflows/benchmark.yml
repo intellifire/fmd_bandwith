@@ -10,6 +10,10 @@ jobs:
     name: Test bandwidth
     runs-on: ubuntu-latest
     steps:
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@v2.0.0
+        with:    
+          timezone: America/Yellowknife
       - name: Checkout
         uses: actions/checkout@v3.3.0
       - name: Update Packages
@@ -17,9 +21,8 @@ jobs:
       - name: Install iPerf3
         run: sudo apt-get -qq install iperf3 -y
       - name: Test bandwith
-#        run: IP=$(dig +short intellifirenwt.com); echo $IP ; iperf3 -c $IP
-#        run: iperf3 -c $(dig +short intellifirenwt.com)
-        run: iperf3 -c sparcsonline.com -p 8881
+        run: iperf3 -c sparcsonline.com -p 8881 -J --logfile "bandwidth-$(date +"%Y_%m_%d_%I_%M_%p").json"
+        
       
       
         
