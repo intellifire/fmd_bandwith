@@ -1,2 +1,13 @@
-# fmd_bandwith
-This repo will provide insight into the bandwidth performance of the Infrastructure at FMD
+# IntelliFire Bandwidth Report
+
+## How it works
+
+This workflow:
+
+1. connects to a iPerf3 host on the target on port 8881.
+2. It does a 10 second bandwidth test UP and Down.
+3. Writes the results to this file.
+
+### Test Results
+
+

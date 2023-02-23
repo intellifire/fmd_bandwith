@@ -1,0 +1,20 @@
+{
+  "name": "fmd_bandwith",
+  "version": "1.0.0",
+  "description": "This repo will provide insight into the bandwidth performance of the Infrastructure at FMD",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intellifire/fmd_bandwith.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/intellifire/fmd_bandwith/issues"
+  },
+  "homepage": "https://github.com/intellifire/fmd_bandwith#readme"
+}
