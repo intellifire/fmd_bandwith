@@ -1,1 +1,17 @@
+name: Benchmark FMD Bandwith
+on:
+  workflow_dispatch:
 
+jobs:
+  benchmark:
+    name: Test bandwidth
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+      - name: Test bandwith
+        run: iperf -c intellifirenwt.com
+      
+      
+        
+  
