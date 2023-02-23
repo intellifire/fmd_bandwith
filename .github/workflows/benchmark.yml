@@ -31,13 +31,10 @@ jobs:
       - name: Delete bandwidth file
         run: rm bandwidth.json
       - name: commit changes and push
-        uses: dsayling/commit-branch-check-action@v0.1.5
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          # Github Token with write permissions
-          github-token: ${{ github.token }}
-          commit-message: "Update Bandwidth"
-              
-      
-      
-        
+          commit_message: 'Update Readme with test results'
+          push: true
+          branch: main
+          
   
