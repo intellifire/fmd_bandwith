@@ -13,12 +13,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.3.0
       - name: Update Packages
-        run: sudo apt-get update -y
+        run: sudo apt-get -qq update -y
       - name: Install iPerf3
-        run: sudo apt-get install iperf3 -y
+        run: sudo apt-get -qq install iperf3 -y
       - name: Test bandwith
 #        run: IP=$(dig +short intellifirenwt.com); echo $IP ; iperf3 -c $IP
-        run: iperf3 -c $(dig +short intellifirenwt.com)
+#        run: iperf3 -c $(dig +short intellifirenwt.com)
+        run: iperf3 -c intellifirenwt.com -p 80
       
       
         
