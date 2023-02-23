@@ -19,7 +19,7 @@ jobs:
       - name: Test bandwith
 #        run: IP=$(dig +short intellifirenwt.com); echo $IP ; iperf3 -c $IP
 #        run: iperf3 -c $(dig +short intellifirenwt.com)
-        run: iperf3 -c sparcsonline.com -p 5001
+        run: iperf3 -c sparcsonline.com -p 8881
       
       
         
