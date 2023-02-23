@@ -14,7 +14,7 @@ jobs:
       - name: Install iPerf3
         run: sudo apt-get install iperf3 -y
       - name: Test bandwith
-        run: iperf -c intellifirenwt.com
+        run: iperf3 -c intellifirenwt.com
       
       
         
