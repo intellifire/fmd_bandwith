@@ -18,11 +18,25 @@ jobs:
         uses: actions/checkout@v3.3.0
       - name: Update Packages
         run: sudo apt-get -qq update -y
-      - name: Install iPerf3
-        run: sudo apt-get -qq install iperf3 -y
+      - name: Upgrade Packages
+        run: sudo apt-get -qq upgrade -y        
+      - name: Install iPerf3 & NodeJS
+        run: sudo apt-get -qq install iperf3 nodejs -y
       - name: Test bandwith
-        run: iperf3 -c sparcsonline.com -p 8881 -J --logfile "bandwidth-$(date +"%Y_%m_%d_%I_%M_%p").json"
-        
+        run: iperf3 -c sparcsonline.com -p 8881 -J --logfile "bandwidth.json"
+      - name: Install Node Deps
+        run: npm install
+      - name: Run NodeJS
+        run: node index.js
+      - name: Delete bandwidth file
+        run: rm bandwidth.json
+      - name: commit changes and push
+        uses: dsayling/commit-branch-check-action@v0.1.5
+        with:
+          # Github Token with write permissions
+          github-token: ${{ github.token }}
+          commit-message: "Update Bandwidth"
+              
       
       
         
