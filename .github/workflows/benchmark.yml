@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.3.0
+      - name: Update Packages
+        run: apt update -y
+      - name: Install iPerf3
+        run: apt -y install iperf3
       - name: Test bandwith
         run: iperf -c intellifirenwt.com
       
