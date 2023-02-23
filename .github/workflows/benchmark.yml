@@ -1,6 +1,6 @@
 name: Benchmark FMD Bandwith
 on:
-
+  workflow_dispatch:
   schedule:
   - cron: "0 0,6,9,12,15,18,21 * * *"
   
