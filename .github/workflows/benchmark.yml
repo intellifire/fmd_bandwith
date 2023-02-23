@@ -17,7 +17,8 @@ jobs:
       - name: Install iPerf3
         run: sudo apt-get install iperf3 -y
       - name: Test bandwith
-        run: IP=$(dig +short intellifirenwt.com); echo $IP ; iperf3 -c $IP
+#        run: IP=$(dig +short intellifirenwt.com); echo $IP ; iperf3 -c $IP
+        run: iperf3 -c $(dig +short intellifirenwt.com)
       
       
         
