@@ -1,5 +1,8 @@
 name: Benchmark FMD Bandwith
 on:
+  push:
+   branches:
+    - main    
   workflow_dispatch:
 
 jobs:
