@@ -13,8 +13,10 @@ jobs:
         run: sudo apt-get update -y
       - name: Install iPerf3
         run: sudo apt-get install iperf3 -y
+      - name: get server IP
+        run: IP=$(dig +short intellifirenwt.com); echo $IP
       - name: Test bandwith
-        run: iperf3 -c intellifirenwt.com
+        run: iperf3 -c $IP
       
       
         
